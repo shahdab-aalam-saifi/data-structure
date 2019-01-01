@@ -1,0 +1,72 @@
+package com.saalamsaifi.datastructure.searching;
+
+import com.saalamsaifi.datastructure.util.BigOh;
+import com.saalamsaifi.datastructure.util.TimeComplexity;
+
+public class LinearSearch implements SearchAlgorithm {
+
+	/**
+	 * 
+	 */
+	public LinearSearch() {
+		super();
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see com.saalamsaifi.datastructure.searching.SearchAlgorithm#find(java.lang.
+	 * Comparable[], java.lang.Comparable)
+	 */
+	@Override
+	public <T extends Comparable<T>> int find(T[] elements, T key) {
+		if (elements == null) {
+			throw new IllegalArgumentException("elements == null");
+		}
+
+		int length = elements.length;
+
+		if (length == 0) {
+			return -1;
+		}
+
+		for (int i = 0; i < length; i++) {
+			if (elements[i] == key) {
+				return i;
+			}
+		}
+
+		return -1;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * com.saalamsaifi.datastructure.searching.SearchAlgorithm#getTimeComplexity(com
+	 * .saalamsaifi.datastructure.util.TimeComplexity)
+	 */
+	@Override
+	public String getTimeComplexity(TimeComplexity type) {
+		String complexity = null;
+
+		if (type == TimeComplexity.AVERAGE || type == TimeComplexity.WORST) {
+			complexity = BigOh.O_N.getComplexity();
+		} else {
+			complexity = BigOh.O_INVALID.getComplexity();
+		}
+
+		return complexity;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * com.saalamsaifi.datastructure.searching.SearchAlgorithm#getSpaceComplexity()
+	 */
+	@Override
+	public String getSpaceComplexity() {
+		return BigOh.O_1.getComplexity();
+	}
+}

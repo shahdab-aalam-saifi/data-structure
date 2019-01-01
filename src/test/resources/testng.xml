@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<test name="Test" thread-count="5" time-out="500">
+		<packages>
+			<package name="com.saalamsaifi.datastructure.sorting"/>
+			<package name="com.saalamsaifi.datastructure.searching"/>
+			<package name="com.saalamsaifi.datastructure.linkedlist"/>
+		</packages>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->
