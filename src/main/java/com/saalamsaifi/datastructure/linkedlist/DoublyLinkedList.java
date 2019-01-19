@@ -1,69 +1,76 @@
 package com.saalamsaifi.datastructure.linkedlist;
 
+import com.saalamsaifi.datastructure.linkedlist.Node.NodeConstant;
 import com.saalamsaifi.datastructure.util.BigOh;
 import com.saalamsaifi.datastructure.util.DataStructure;
 import com.saalamsaifi.datastructure.util.DataStructureOperation;
 import com.saalamsaifi.datastructure.util.TimeComplexity;
 
-public class DoublyLinkedList<T> implements DataStructure {
-	private static final String HEAD_NODE = "(HEAD)";
-	private static final String NULL_NODE = "(NULL)";
-
-	private class Node {
-		private Node next;
-		private Node previous;
-		private final T value;
+public class DoublyLinkedList<T> implements DataStructure, LinkedList<T> {
+	private static class DoublyNode<T> extends Node<T> {
+		private DoublyNode<T> previous;
 
 		/**
-		 * 
+		 * @param value
 		 */
-		public Node(T value) {
-			this.value = value;
-			length++;
+		public DoublyNode(T value) {
+			super(value);
 		}
 
 		/**
-		 * @return value
+		 * @return the previous
 		 */
-		public T getValue() {
-			return this.value;
+		public DoublyNode<T> getPrevious() {
+			return previous;
+		}
+
+		/**
+		 * @param previous
+		 *            the previous to set
+		 */
+		public void setPrevious(DoublyNode<T> previous) {
+			this.previous = previous;
 		}
 
 		/*
 		 * (non-Javadoc)
 		 * 
-		 * @see java.lang.Object#toString()
+		 * @see com.saalamsaifi.datastructure.linkedlist.Node#getNext()
 		 */
 		@Override
-		public String toString() {
-			return "[" + this.getValue() + "]";
+		public DoublyNode<T> getNext() {
+			return (DoublyNode<T>) super.getNext();
 		}
+
 	}
 
-	private Node head;
-	private int length;
+	private DoublyNode<T> head;
+	private int size;
 
 	/**
 	 * 
 	 */
+	@SuppressWarnings("unchecked")
 	public DoublyLinkedList() {
-		head = null;
-	}
-
-	public int size() {
-		return this.length;
+		super();
+		head = new DoublyNode<>((T) new Object());
 	}
 
 	/**
 	 * @param value
 	 */
 	public void insertAtHead(T value) {
-		Node newNode = new Node(value);
-		if (this.head != null) {
-			newNode.next = this.head;
-			this.head.previous = newNode;
+		DoublyNode<T> newNode = new DoublyNode<>(value);
+
+		if (this.head.getNext() != null) {
+			newNode.setNext(this.head.getNext());
+			newNode.getNext().setPrevious(newNode);
 		}
-		this.head = newNode;
+
+		this.head.setNext(newNode);
+		newNode.setPrevious(this.head);
+
+		this.incrementSize();
 	}
 
 	/**
@@ -76,7 +83,7 @@ public class DoublyLinkedList<T> implements DataStructure {
 			throw new IllegalArgumentException("position < 0");
 		}
 
-		if (position > this.length) {
+		if (position > this.size()) {
 			throw new IllegalArgumentException("position > size");
 		}
 
@@ -85,42 +92,47 @@ public class DoublyLinkedList<T> implements DataStructure {
 			return;
 		}
 
-		Node current = this.head;
+		DoublyNode<T> current = this.head.getNext();
 
 		for (int i = 0; i < position - 1; i++) {
-			current = current.next;
+			current = current.getNext();
 		}
 
-		Node newNode = new Node(value);
-		newNode.next = current.next;
-		newNode.previous = current;
+		DoublyNode<T> newNode = new DoublyNode<>(value);
 
-		if (current.next != null) {
-			current.next.previous = newNode;
+		newNode.setNext(current.getNext());
+
+		this.incrementSize();
+
+		if (current.getNext() != null) {
+			current.getNext().setPrevious(newNode);
 		}
-		current.next = newNode;
+
+		newNode.setPrevious(current);
+		current.setNext(newNode);
 	}
 
 	/**
 	 * @param value
 	 */
 	public void insertAtEnd(T value) {
-		insertAtNth(value, this.length);
+		insertAtNth(value, this.size);
 	}
 
 	/**
 	 * @return
 	 */
-	public Node deleteAtHead() {
-		Node temp = this.head;
+	public DoublyNode<T> deleteAtHead() {
+		DoublyNode<T> temp = this.head.getNext();
 
-		if (this.head.next != null) {
-			this.head = this.head.next;
-			this.head.previous = null;
+		if (temp.getNext() != null) {
+			this.head.setNext(temp.getNext());
+			temp.getNext().setPrevious(this.head);
 		} else {
-			this.head = null;
+			this.head.setNext(null);
 		}
-		this.length--;
+
+		this.decrementSize();
 
 		return temp;
 	}
@@ -129,12 +141,12 @@ public class DoublyLinkedList<T> implements DataStructure {
 	 * @param position
 	 * @return
 	 */
-	public Node deleteAtNth(int position) {
+	public DoublyNode<T> deleteAtNth(int position) {
 		if (position < 0) {
 			throw new IllegalArgumentException("position < 0");
 		}
 
-		if (position > this.length) {
+		if (position > this.size()) {
 			throw new IllegalArgumentException("position > size");
 		}
 
@@ -142,21 +154,22 @@ public class DoublyLinkedList<T> implements DataStructure {
 			return deleteAtHead();
 		}
 
-		Node first = this.head;
+		DoublyNode<T> first = this.head.getNext();
 
 		for (int i = 0; i < position - 1; i++) {
-			first = first.next;
+			first = first.getNext();
 		}
 
-		Node temp = first.next;
-		Node second = temp.next;
+		DoublyNode<T> temp = first.getNext();
+		DoublyNode<T> second = temp.getNext();
 
-		first.next = second;
+		first.setNext(second);
+
 		if (second != null) {
-			second.previous = first;
+			second.setPrevious(first);
 		}
 
-		this.length--;
+		this.decrementSize();
 
 		return temp;
 	}
@@ -164,8 +177,8 @@ public class DoublyLinkedList<T> implements DataStructure {
 	/**
 	 * @return
 	 */
-	public Node deleteAtEnd() {
-		return deleteAtNth(this.length - 1);
+	public DoublyNode<T> deleteAtEnd() {
+		return deleteAtNth(this.size() - 1);
 	}
 
 	/**
@@ -175,19 +188,19 @@ public class DoublyLinkedList<T> implements DataStructure {
 	public int search(T value) {
 		int index = 0;
 
-		Node current = this.head;
+		DoublyNode<T> current = this.head.getNext();
 
-		if (this.head != null) {
+		if (this.head.getNext() != null) {
 			if (current.getValue() == value) {
 				return index;
 			}
 
-			while (current.next != null) {
+			while (current.getNext() != null) {
 				if (current.getValue() == value) {
 					return index;
 				}
 				index++;
-				current = current.next;
+				current = current.getNext();
 			}
 		}
 
@@ -198,24 +211,28 @@ public class DoublyLinkedList<T> implements DataStructure {
 	 * @return
 	 */
 	public boolean isEmpty() {
-		return this.length == 0;
+		return this.size == 0;
+	}
+
+	public int size() {
+		return this.size;
 	}
 
 	public void printBackward() {
 		StringBuilder list = new StringBuilder();
 
-		Node current = this.head;
+		DoublyNode<T> current = this.head.getNext();
 
-		for (int i = 0; i < this.length - 1; i++) {
-			current = current.next;
+		for (int i = 0; i < this.size() - 1; i++) {
+			current = current.getNext();
 		}
 
-		list.append(NULL_NODE);
-		for (int i = 0; i < this.length; i++) {
+		list.append(NodeConstant.NULL_NODE.getValue());
+		for (int i = 0; i < this.size(); i++) {
 			list.append(current);
-			current = current.previous;
+			current = current.getPrevious();
 		}
-		list.append(HEAD_NODE);
+		list.append(NodeConstant.HEAD_NODE.getValue());
 
 		System.out.print(list);
 	}
@@ -229,18 +246,32 @@ public class DoublyLinkedList<T> implements DataStructure {
 	public String toString() {
 		StringBuilder list = new StringBuilder();
 
-		Node current = this.head;
+		DoublyNode<T> current = this.head.getNext();
 
-		list.append(HEAD_NODE);
+		list.append(NodeConstant.HEAD_NODE.getValue());
 
 		while (current != null) {
 			list.append(current);
-			current = current.next;
+			current = current.getNext();
 		}
 
-		list.append(NULL_NODE);
+		list.append(NodeConstant.NULL_NODE.getValue());
 
 		return list.toString();
+	}
+
+	/**
+	 * 
+	 */
+	private void incrementSize() {
+		this.size++;
+	}
+
+	/**
+	 * 
+	 */
+	private void decrementSize() {
+		this.size--;
 	}
 
 	/*

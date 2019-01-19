@@ -1,7 +1,7 @@
 package com.saalamsaifi.datastructure.sorting;
 
-import static com.saalamsaifi.datastructure.sorting.TestProperties.MAX_ELEMENT_COUNT;
-import static com.saalamsaifi.datastructure.sorting.TestProperties.STRING_CHARACTER_COUNT;
+import static com.saalamsaifi.datastructure.util.TestProperties.MAX_ELEMENT_COUNT;
+import static com.saalamsaifi.datastructure.util.TestProperties.STRING_CHARACTER_COUNT;
 import static org.testng.Assert.assertEquals;
 
 import java.util.ArrayList;

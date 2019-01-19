@@ -3,9 +3,11 @@
 <suite name="Suite">
 	<test name="Test" thread-count="5" time-out="500">
 		<packages>
-			<package name="com.saalamsaifi.datastructure.sorting"/>
-			<package name="com.saalamsaifi.datastructure.searching"/>
-			<package name="com.saalamsaifi.datastructure.linkedlist"/>
+			<package name="com.saalamsaifi.datastructure.basic" />
+			<package name="com.saalamsaifi.datastructure.util" />
+			<package name="com.saalamsaifi.datastructure.sorting" />
+			<package name="com.saalamsaifi.datastructure.searching" />
+			<package name="com.saalamsaifi.datastructure.linkedlist" />
 		</packages>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

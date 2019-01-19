@@ -11,23 +11,20 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import com.saalamsaifi.datastructure.util.BigOh;
-import com.saalamsaifi.datastructure.util.DataStructureOperation;
-import com.saalamsaifi.datastructure.util.TimeComplexity;;
-
-public class DoublyLinkedListTest {
-	private DoublyLinkedList<Integer> linkedList;
+public class CircularLinkedListTest {
+	private CircularLinkedList<Integer> linkedList;
 	private final ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 	private final PrintStream printStream = System.out;
 
 	@BeforeMethod
 	public void setUp() throws Exception {
-		linkedList = new DoublyLinkedList<>();
+		linkedList = new CircularLinkedList<>();
 		System.setOut(new PrintStream(outputStream));
 	}
 
 	@AfterMethod
 	public void tearDownMethod() throws Exception {
+		System.out.println("tearDownMethod");
 		outputStream.reset();
 		System.setOut(printStream);
 	}
@@ -93,6 +90,11 @@ public class DoublyLinkedListTest {
 	}
 
 	@Test
+	public void testDeleteHeadEmptyList() throws Exception {
+		assertEquals(linkedList.deleteAtHead(), null);
+	}
+
+	@Test
 	public void testDeleteAtNth() throws Exception {
 		linkedList.insertAtNth(RandomUtils.nextInt(), 0);
 		for (int i = 1; i < MAX_ELEMENT_COUNT; i++) {
@@ -124,6 +126,11 @@ public class DoublyLinkedListTest {
 		}
 
 		assertEquals(linkedList.size(), 0);
+	}
+
+	@Test
+	public void testDeleteEndEmptyList() throws Exception {
+		assertEquals(linkedList.deleteAtEnd(), null);
 	}
 
 	@Test
@@ -163,13 +170,19 @@ public class DoublyLinkedListTest {
 	}
 
 	@Test
-	public void testNodeToString() throws Exception {
+	public void testToString() throws Exception {
 		int value = RandomUtils.nextInt();
 
 		linkedList.insertAtHead(value);
 		System.out.print(linkedList);
 
 		assertEquals("(HEAD)[" + value + "](NULL)", outputStream.toString());
+	}
+
+	@Test
+	public void testToStringEmptyList() throws Exception {
+		System.out.print(linkedList);
+		assertEquals("(HEAD)(NULL)", outputStream.toString());
 	}
 
 	@Test
@@ -185,67 +198,8 @@ public class DoublyLinkedListTest {
 	}
 
 	@Test
-	public void testAccessAverageTimeComplexity() throws Exception {
-		assertEquals(linkedList.getTimeComplexity(TimeComplexity.AVERAGE, DataStructureOperation.ACCESS),
-				BigOh.O_N.getComplexity());
+	public void testPrintBackwordEmptyList() throws Exception {
+		linkedList.printBackward();
+		assertEquals(outputStream.toString(), "(NULL)(HEAD)");
 	}
-
-	@Test
-	public void testSearchAverageTimeComplexity() throws Exception {
-		assertEquals(linkedList.getTimeComplexity(TimeComplexity.AVERAGE, DataStructureOperation.SEARCH),
-				BigOh.O_N.getComplexity());
-	}
-
-	@Test
-	public void testInsertionAverageTimeComplexity() throws Exception {
-		assertEquals(linkedList.getTimeComplexity(TimeComplexity.AVERAGE, DataStructureOperation.INSERTION),
-				BigOh.O_1.getComplexity());
-	}
-
-	@Test
-	public void testDeletionAverageTimeComplexity() throws Exception {
-		assertEquals(linkedList.getTimeComplexity(TimeComplexity.AVERAGE, DataStructureOperation.DELETION),
-				BigOh.O_1.getComplexity());
-	}
-
-	@Test
-	public void testAccessWorstTimeComplexity() throws Exception {
-		assertEquals(linkedList.getTimeComplexity(TimeComplexity.WORST, DataStructureOperation.ACCESS),
-				BigOh.O_N.getComplexity());
-	}
-
-	@Test
-	public void testSearchWorstTimeComplexity() throws Exception {
-		assertEquals(linkedList.getTimeComplexity(TimeComplexity.WORST, DataStructureOperation.SEARCH),
-				BigOh.O_N.getComplexity());
-	}
-
-	@Test
-	public void testInsertionWorstTimeComplexity() throws Exception {
-		assertEquals(linkedList.getTimeComplexity(TimeComplexity.WORST, DataStructureOperation.INSERTION),
-				BigOh.O_1.getComplexity());
-	}
-
-	@Test
-	public void testDeletionWorstTimeComplexity() throws Exception {
-		assertEquals(linkedList.getTimeComplexity(TimeComplexity.WORST, DataStructureOperation.DELETION),
-				BigOh.O_1.getComplexity());
-	}
-
-	@Test
-	public void testInvalidTimeComplexity() throws Exception {
-		assertEquals(linkedList.getTimeComplexity(TimeComplexity.BEST, DataStructureOperation.ACCESS),
-				BigOh.O_INVALID.getComplexity());
-	}
-
-	@Test
-	public void testInvalidOperationTimeComplexity() throws Exception {
-		assertEquals(linkedList.getTimeComplexity(TimeComplexity.WORST, null), BigOh.O_INVALID.getComplexity());
-	}
-
-	@Test
-	public void testSpaceComplexity() throws Exception {
-		assertEquals(linkedList.getSpaceComplexity(), BigOh.O_N.getComplexity());
-	}
-
 }

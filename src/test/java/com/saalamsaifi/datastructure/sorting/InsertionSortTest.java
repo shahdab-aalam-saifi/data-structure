@@ -1,7 +1,5 @@
 package com.saalamsaifi.datastructure.sorting;
 
-import static com.saalamsaifi.datastructure.sorting.TestProperties.MAX_ELEMENT_COUNT;
-import static com.saalamsaifi.datastructure.sorting.TestProperties.STRING_CHARACTER_COUNT;
 import static org.testng.Assert.assertEquals;
 
 import java.util.ArrayList;
@@ -15,7 +13,10 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.saalamsaifi.datastructure.util.BigOh;
+import static com.saalamsaifi.datastructure.util.TestProperties.MAX_ELEMENT_COUNT;
+import static com.saalamsaifi.datastructure.util.TestProperties.STRING_CHARACTER_COUNT;
 import com.saalamsaifi.datastructure.util.TimeComplexity;
+
 
 public class InsertionSortTest {
 	private InsertionSort insertionSort;

@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	contentScriptType="application/ecmascript" contentStyleType="text/css"
+	height="1000px" preserveAspectRatio="none" style="width:318px;height:1000px;"
+	version="1.1" viewBox="0 0 318 1000" width="318px" zoomAndPan="magnify">
+	<defs>
+		<filter height="300%" id="f1kb73g6p5m56c" width="300%" x="-1"
+			y="-1">
+			<feGaussianBlur result="blurOut" stdDeviation="2.0" />
+			<feColorMatrix in="blurOut" result="blurOut2" type="matrix"
+				values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0" />
+			<feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3" />
+			<feBlend in="SourceGraphic" in2="blurOut3" mode="normal" />
+		</filter>
+	</defs>
+	<g>
+		<text fill="#000000" font-family="sans-serif" font-size="18"
+			lengthAdjust="spacingAndGlyphs" textLength="238" x="36" y="26.708">Circular
+			Doubly Linked List</text>
+		<text fill="#000000" font-family="sans-serif" font-size="18"
+			lengthAdjust="spacingAndGlyphs" textLength="134" x="91" y="47.6611">(Delete at
+			Nth)</text>
+		<text fill="#000000" font-family="sans-serif" font-size="18"
+			lengthAdjust="spacingAndGlyphs" textLength="0" x="161" y="68.6143" />
+		<ellipse cx="182.5" cy="82.8594" fill="#000000" filter="url(#f1kb73g6p5m56c)"
+			rx="10" ry="10" style="stroke: none; stroke-width: 1.0;" />
+		<rect fill="#FEFECE" filter="url(#f1kb73g6p5m56c)" height="33.9688"
+			rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;"
+			width="104" x="130.5" y="112.8594" />
+		<text fill="#000000" font-family="sans-serif" font-size="12"
+			lengthAdjust="spacingAndGlyphs" textLength="84" x="140.5" y="133.998">Take
+			position</text>
+		<rect fill="#FEFECE" filter="url(#f1kb73g6p5m56c)" height="33.9688"
+			rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;"
+			width="159" x="103" y="215.2305" />
+		<text fill="#000000" font-family="sans-serif" font-size="12"
+			lengthAdjust="spacingAndGlyphs" textLength="139" x="113" y="236.3691">return
+			deleteAtHead()</text>
+		<polygon fill="#FEFECE" filter="url(#f1kb73g6p5m56c)"
+			points="131.5,166.8281,233.5,166.8281,245.5,178.8281,233.5,190.8281,131.5,190.8281,119.5,178.8281,131.5,166.8281"
+			style="stroke: #A80036; stroke-width: 1.5;" />
+		<text fill="#000000" font-family="sans-serif" font-size="11"
+			lengthAdjust="spacingAndGlyphs" textLength="20" x="186.5" y="201.0386">yes
+		</text>
+		<text fill="#000000" font-family="sans-serif" font-size="11"
+			lengthAdjust="spacingAndGlyphs" textLength="102" x="131.5" y="182.6362">Is
+			position == 0 ?</text>
+		<polygon fill="#FEFECE" filter="url(#f1kb73g6p5m56c)"
+			points="182.5,269.1992,194.5,281.1992,182.5,293.1992,170.5,281.1992,182.5,269.1992"
+			style="stroke: #A80036; stroke-width: 1.5;" />
+		<rect fill="#FEFECE" filter="url(#f1kb73g6p5m56c)" height="33.9688"
+			rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;"
+			width="150" x="107.5" y="361.6016" />
+		<text fill="#000000" font-family="sans-serif" font-size="12"
+			lengthAdjust="spacingAndGlyphs" textLength="130" x="117.5" y="382.7402">return
+			deleteAtEnd()</text>
+		<polygon fill="#FEFECE" filter="url(#f1kb73g6p5m56c)"
+			points="104,313.1992,261,313.1992,273,325.1992,261,337.1992,104,337.1992,92,325.1992,104,313.1992"
+			style="stroke: #A80036; stroke-width: 1.5;" />
+		<text fill="#000000" font-family="sans-serif" font-size="11"
+			lengthAdjust="spacingAndGlyphs" textLength="20" x="186.5" y="347.4097">yes
+		</text>
+		<text fill="#000000" font-family="sans-serif" font-size="11"
+			lengthAdjust="spacingAndGlyphs" textLength="157" x="104" y="329.0073">Is
+			position == list.size - 1 ?</text>
+		<polygon fill="#FEFECE" filter="url(#f1kb73g6p5m56c)"
+			points="182.5,415.5703,194.5,427.5703,182.5,439.5703,170.5,427.5703,182.5,415.5703"
+			style="stroke: #A80036; stroke-width: 1.5;" />
+		<polygon fill="#FEFECE" filter="url(#f1kb73g6p5m56c)"
+			points="122.5,459.5703,242.5,459.5703,254.5,471.5703,242.5,483.5703,122.5,483.5703,110.5,471.5703,122.5,459.5703"
+			style="stroke: #A80036; stroke-width: 1.5;" />
+		<text fill="#000000" font-family="sans-serif" font-size="11"
+			lengthAdjust="spacingAndGlyphs" textLength="120" x="122.5" y="475.3784">Is
+			head.next != null ?</text>
+		<text fill="#000000" font-family="sans-serif" font-size="11"
+			lengthAdjust="spacingAndGlyphs" textLength="20" x="90.5" y="468.9761">yes</text>
+		<text fill="#000000" font-family="sans-serif" font-size="11"
+			lengthAdjust="spacingAndGlyphs" textLength="14" x="254.5" y="468.9761">no</text>
+		<rect fill="#FEFECE" filter="url(#f1kb73g6p5m56c)" height="75.875"
+			rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;"
+			width="141" x="30" y="493.5703" />
+		<text fill="#000000" font-family="sans-serif" font-size="12"
+			lengthAdjust="spacingAndGlyphs" textLength="0" x="44" y="514.709" />
+		<text fill="#000000" font-family="sans-serif" font-size="12"
+			lengthAdjust="spacingAndGlyphs" textLength="105" x="56" y="528.6777">first =
+			head.next</text>
+		<text fill="#000000" font-family="sans-serif" font-size="12"
+			lengthAdjust="spacingAndGlyphs" textLength="29" x="56" y="542.6465">i = 0</text>
+		<text fill="#000000" font-family="sans-serif" font-size="12"
+			lengthAdjust="spacingAndGlyphs" textLength="0" x="44" y="556.6152" />
+		<rect fill="#FEFECE" filter="url(#f1kb73g6p5m56c)" height="75.875"
+			rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;"
+			width="141" x="30" y="633.4453" />
+		<text fill="#000000" font-family="sans-serif" font-size="12"
+			lengthAdjust="spacingAndGlyphs" textLength="0" x="44" y="654.584" />
+		<text fill="#000000" font-family="sans-serif" font-size="12"
+			lengthAdjust="spacingAndGlyphs" textLength="105" x="56" y="668.5527">first =
+			temp.next</text>
+		<text fill="#000000" font-family="sans-serif" font-size="12"
+			lengthAdjust="spacingAndGlyphs" textLength="23" x="56" y="682.5215">i++</text>
+		<text fill="#000000" font-family="sans-serif" font-size="12"
+			lengthAdjust="spacingAndGlyphs" textLength="0" x="44" y="696.4902" />
+		<polygon fill="#FEFECE" filter="url(#f1kb73g6p5m56c)"
+			points="100.5,589.4453,112.5,601.4453,100.5,613.4453,88.5,601.4453,100.5,589.4453"
+			style="stroke: #A80036; stroke-width: 1.5;" />
+		<polygon fill="#FEFECE" filter="url(#f1kb73g6p5m56c)"
+			points="58.5,729.3203,142.5,729.3203,154.5,741.3203,142.5,753.3203,58.5,753.3203,46.5,741.3203,58.5,729.3203"
+			style="stroke: #A80036; stroke-width: 1.5;" />
+		<text fill="#000000" font-family="sans-serif" font-size="11"
+			lengthAdjust="spacingAndGlyphs" textLength="84" x="58.5" y="745.1284">i &lt;
+			position - 1</text>
+		<rect fill="#FEFECE" filter="url(#f1kb73g6p5m56c)" height="145.7188"
+			rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;"
+			width="181" x="10" y="773.3203" />
+		<text fill="#000000" font-family="sans-serif" font-size="12"
+			lengthAdjust="spacingAndGlyphs" textLength="0" x="24" y="794.459" />
+		<text fill="#000000" font-family="sans-serif" font-size="12"
+			lengthAdjust="spacingAndGlyphs" textLength="105" x="36" y="808.4277">temp =
+			first.next</text>
+		<text fill="#000000" font-family="sans-serif" font-size="12"
+			lengthAdjust="spacingAndGlyphs" textLength="127" x="36" y="822.3965">second =
+			temp.next</text>
+		<text fill="#000000" font-family="sans-serif" font-size="12"
+			lengthAdjust="spacingAndGlyphs" textLength="0" x="24" y="836.3652" />
+		<text fill="#000000" font-family="sans-serif" font-size="12"
+			lengthAdjust="spacingAndGlyphs" textLength="119" x="36" y="850.334">first.next
+			= second</text>
+		<text fill="#000000" font-family="sans-serif" font-size="12"
+			lengthAdjust="spacingAndGlyphs" textLength="145" x="36" y="864.3027">second.previous
+			= first</text>
+		<text fill="#000000" font-family="sans-serif" font-size="12"
+			lengthAdjust="spacingAndGlyphs" textLength="0" x="36" y="878.2715" />
+		<text fill="#000000" font-family="sans-serif" font-size="12"
+			lengthAdjust="spacingAndGlyphs" textLength="75" x="36" y="892.2402">return temp
+		</text>
+		<text fill="#000000" font-family="sans-serif" font-size="12"
+			lengthAdjust="spacingAndGlyphs" textLength="0" x="24" y="906.209" />
+		<rect fill="#FEFECE" filter="url(#f1kb73g6p5m56c)" height="33.9688"
+			rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;"
+			width="85" x="222" y="493.5703" />
+		<text fill="#000000" font-family="sans-serif" font-size="12"
+			lengthAdjust="spacingAndGlyphs" textLength="65" x="232" y="514.709">return null
+		</text>
+		<polygon fill="#FEFECE" filter="url(#f1kb73g6p5m56c)"
+			points="182.5,925.0391,194.5,937.0391,182.5,949.0391,170.5,937.0391,182.5,925.0391"
+			style="stroke: #A80036; stroke-width: 1.5;" />
+		<ellipse cx="182.5" cy="979.0391" fill="none" filter="url(#f1kb73g6p5m56c)"
+			rx="10" ry="10" style="stroke: #000000; stroke-width: 1.0;" />
+		<ellipse cx="183" cy="979.5391" fill="#000000" filter="url(#f1kb73g6p5m56c)"
+			rx="6" ry="6" style="stroke: none; stroke-width: 1.0;" />
+		<line style="stroke: #A80036; stroke-width: 1.5;" x1="182.5" x2="182.5"
+			y1="92.8594" y2="112.8594" />
+		<polygon fill="#A80036"
+			points="178.5,102.8594,182.5,112.8594,186.5,102.8594,182.5,106.8594"
+			style="stroke: #A80036; stroke-width: 1.0;" />
+		<line style="stroke: #A80036; stroke-width: 1.5;" x1="182.5" x2="182.5"
+			y1="190.8281" y2="215.2305" />
+		<polygon fill="#A80036"
+			points="178.5,205.2305,182.5,215.2305,186.5,205.2305,182.5,209.2305"
+			style="stroke: #A80036; stroke-width: 1.0;" />
+		<line style="stroke: #A80036; stroke-width: 1.5;" x1="245.5" x2="272"
+			y1="178.8281" y2="178.8281" />
+		<polygon fill="#A80036"
+			points="268,222.2148,272,232.2148,276,222.2148,272,226.2148" style="stroke: #A80036; stroke-width: 1.5;" />
+		<line style="stroke: #A80036; stroke-width: 1.5;" x1="272" x2="272"
+			y1="178.8281" y2="281.1992" />
+		<line style="stroke: #A80036; stroke-width: 1.5;" x1="272" x2="194.5"
+			y1="281.1992" y2="281.1992" />
+		<polygon fill="#A80036"
+			points="204.5,277.1992,194.5,281.1992,204.5,285.1992,200.5,281.1992"
+			style="stroke: #A80036; stroke-width: 1.0;" />
+		<line style="stroke: #A80036; stroke-width: 1.5;" x1="182.5" x2="182.5"
+			y1="249.1992" y2="269.1992" />
+		<polygon fill="#A80036"
+			points="178.5,259.1992,182.5,269.1992,186.5,259.1992,182.5,263.1992"
+			style="stroke: #A80036; stroke-width: 1.0;" />
+		<line style="stroke: #A80036; stroke-width: 1.5;" x1="182.5" x2="182.5"
+			y1="146.8281" y2="166.8281" />
+		<polygon fill="#A80036"
+			points="178.5,156.8281,182.5,166.8281,186.5,156.8281,182.5,160.8281"
+			style="stroke: #A80036; stroke-width: 1.0;" />
+		<line style="stroke: #A80036; stroke-width: 1.5;" x1="182.5" x2="182.5"
+			y1="337.1992" y2="361.6016" />
+		<polygon fill="#A80036"
+			points="178.5,351.6016,182.5,361.6016,186.5,351.6016,182.5,355.6016"
+			style="stroke: #A80036; stroke-width: 1.0;" />
+		<line style="stroke: #A80036; stroke-width: 1.5;" x1="273" x2="285"
+			y1="325.1992" y2="325.1992" />
+		<polygon fill="#A80036"
+			points="281,368.5859,285,378.5859,289,368.5859,285,372.5859" style="stroke: #A80036; stroke-width: 1.5;" />
+		<line style="stroke: #A80036; stroke-width: 1.5;" x1="285" x2="285"
+			y1="325.1992" y2="427.5703" />
+		<line style="stroke: #A80036; stroke-width: 1.5;" x1="285" x2="194.5"
+			y1="427.5703" y2="427.5703" />
+		<polygon fill="#A80036"
+			points="204.5,423.5703,194.5,427.5703,204.5,431.5703,200.5,427.5703"
+			style="stroke: #A80036; stroke-width: 1.0;" />
+		<line style="stroke: #A80036; stroke-width: 1.5;" x1="182.5" x2="182.5"
+			y1="395.5703" y2="415.5703" />
+		<polygon fill="#A80036"
+			points="178.5,405.5703,182.5,415.5703,186.5,405.5703,182.5,409.5703"
+			style="stroke: #A80036; stroke-width: 1.0;" />
+		<line style="stroke: #A80036; stroke-width: 1.5;" x1="182.5" x2="182.5"
+			y1="293.1992" y2="313.1992" />
+		<polygon fill="#A80036"
+			points="178.5,303.1992,182.5,313.1992,186.5,303.1992,182.5,307.1992"
+			style="stroke: #A80036; stroke-width: 1.0;" />
+		<line style="stroke: #A80036; stroke-width: 1.5;" x1="100.5" x2="100.5"
+			y1="613.4453" y2="633.4453" />
+		<polygon fill="#A80036"
+			points="96.5,623.4453,100.5,633.4453,104.5,623.4453,100.5,627.4453"
+			style="stroke: #A80036; stroke-width: 1.0;" />
+		<line style="stroke: #A80036; stroke-width: 1.5;" x1="154.5" x2="183"
+			y1="741.3203" y2="741.3203" />
+		<polygon fill="#A80036"
+			points="179,681.3828,183,671.3828,187,681.3828,183,677.3828" style="stroke: #A80036; stroke-width: 1.5;" />
+		<line style="stroke: #A80036; stroke-width: 1.5;" x1="183" x2="183"
+			y1="601.4453" y2="741.3203" />
+		<line style="stroke: #A80036; stroke-width: 1.5;" x1="183" x2="112.5"
+			y1="601.4453" y2="601.4453" />
+		<polygon fill="#A80036"
+			points="122.5,597.4453,112.5,601.4453,122.5,605.4453,118.5,601.4453"
+			style="stroke: #A80036; stroke-width: 1.0;" />
+		<line style="stroke: #A80036; stroke-width: 1.5;" x1="100.5" x2="100.5"
+			y1="709.3203" y2="729.3203" />
+		<polygon fill="#A80036"
+			points="96.5,719.3203,100.5,729.3203,104.5,719.3203,100.5,723.3203"
+			style="stroke: #A80036; stroke-width: 1.0;" />
+		<line style="stroke: #A80036; stroke-width: 1.5;" x1="100.5" x2="100.5"
+			y1="569.4453" y2="589.4453" />
+		<polygon fill="#A80036"
+			points="96.5,579.4453,100.5,589.4453,104.5,579.4453,100.5,583.4453"
+			style="stroke: #A80036; stroke-width: 1.0;" />
+		<line style="stroke: #A80036; stroke-width: 1.5;" x1="100.5" x2="100.5"
+			y1="753.3203" y2="773.3203" />
+		<polygon fill="#A80036"
+			points="96.5,763.3203,100.5,773.3203,104.5,763.3203,100.5,767.3203"
+			style="stroke: #A80036; stroke-width: 1.0;" />
+		<line style="stroke: #A80036; stroke-width: 1.5;" x1="110.5" x2="100.5"
+			y1="471.5703" y2="471.5703" />
+		<line style="stroke: #A80036; stroke-width: 1.5;" x1="100.5" x2="100.5"
+			y1="471.5703" y2="493.5703" />
+		<polygon fill="#A80036"
+			points="96.5,483.5703,100.5,493.5703,104.5,483.5703,100.5,487.5703"
+			style="stroke: #A80036; stroke-width: 1.0;" />
+		<line style="stroke: #A80036; stroke-width: 1.5;" x1="254.5" x2="264.5"
+			y1="471.5703" y2="471.5703" />
+		<line style="stroke: #A80036; stroke-width: 1.5;" x1="264.5" x2="264.5"
+			y1="471.5703" y2="493.5703" />
+		<polygon fill="#A80036"
+			points="260.5,483.5703,264.5,493.5703,268.5,483.5703,264.5,487.5703"
+			style="stroke: #A80036; stroke-width: 1.0;" />
+		<line style="stroke: #A80036; stroke-width: 1.5;" x1="100.5" x2="100.5"
+			y1="919.0391" y2="937.0391" />
+		<line style="stroke: #A80036; stroke-width: 1.5;" x1="100.5" x2="170.5"
+			y1="937.0391" y2="937.0391" />
+		<polygon fill="#A80036"
+			points="160.5,933.0391,170.5,937.0391,160.5,941.0391,164.5,937.0391"
+			style="stroke: #A80036; stroke-width: 1.0;" />
+		<line style="stroke: #A80036; stroke-width: 1.5;" x1="264.5" x2="264.5"
+			y1="527.5391" y2="937.0391" />
+		<line style="stroke: #A80036; stroke-width: 1.5;" x1="264.5" x2="194.5"
+			y1="937.0391" y2="937.0391" />
+		<polygon fill="#A80036"
+			points="204.5,933.0391,194.5,937.0391,204.5,941.0391,200.5,937.0391"
+			style="stroke: #A80036; stroke-width: 1.0;" />
+		<line style="stroke: #A80036; stroke-width: 1.5;" x1="182.5" x2="182.5"
+			y1="439.5703" y2="459.5703" />
+		<polygon fill="#A80036"
+			points="178.5,449.5703,182.5,459.5703,186.5,449.5703,182.5,453.5703"
+			style="stroke: #A80036; stroke-width: 1.0;" />
+		<line style="stroke: #A80036; stroke-width: 1.5;" x1="182.5" x2="182.5"
+			y1="949.0391" y2="969.0391" />
+		<polygon fill="#A80036"
+			points="178.5,959.0391,182.5,969.0391,186.5,959.0391,182.5,963.0391"
+			style="stroke: #A80036; stroke-width: 1.0;" />
+<!--
+@startuml
+title Circular Doubly Linked List \n(Delete at Nth)\n
+
+start
+
+:Take position;
+
+if (Is position == 0 ?) then (yes)
+    :return deleteAtHead();
+endif;
+
+if (Is position == list.size - 1 ?) then (yes)
+    :return deleteAtEnd();
+endif;
+
+if(Is head.next != null ?) then (yes)
+    :
+        first = head.next
+        i = 0
+    ;
+    repeat
+        :
+            first = temp.next
+            i++
+        ;
+    repeat while(i < position - 1)
+    :
+        temp = first.next
+        second = temp.next
+
+        first.next = second
+        second.previous = first
+        
+        return temp
+    ;
+else (no)
+    :return null;
+endif;
+
+stop
+@enduml
+
+PlantUML version 1.2019.00(Sun Jan 13 15:46:42 UTC 2019)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.7.0_25-b15
+Operating System: Linux
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

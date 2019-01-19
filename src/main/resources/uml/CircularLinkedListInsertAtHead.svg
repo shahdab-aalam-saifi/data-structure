@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	contentScriptType="application/ecmascript" contentStyleType="text/css"
+	height="385px" preserveAspectRatio="none" style="width:508px;height:385px;"
+	version="1.1" viewBox="0 0 508 385" width="508px" zoomAndPan="magnify">
+	<defs>
+		<filter height="300%" id="f1xy3brycc10zk" width="300%" x="-1"
+			y="-1">
+			<feGaussianBlur result="blurOut" stdDeviation="2.0" />
+			<feColorMatrix in="blurOut" result="blurOut2" type="matrix"
+				values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0" />
+			<feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3" />
+			<feBlend in="SourceGraphic" in2="blurOut3" mode="normal" />
+		</filter>
+	</defs>
+	<g>
+		<text fill="#000000" font-family="sans-serif" font-size="18"
+			lengthAdjust="spacingAndGlyphs" textLength="238" x="131" y="26.708">Circular
+			Doubly Linked List</text>
+		<text fill="#000000" font-family="sans-serif" font-size="18"
+			lengthAdjust="spacingAndGlyphs" textLength="140" x="183" y="47.6611">(Insert at
+			Head)</text>
+		<text fill="#000000" font-family="sans-serif" font-size="18"
+			lengthAdjust="spacingAndGlyphs" textLength="0" x="256" y="68.6143" />
+		<ellipse cx="241.25" cy="82.8594" fill="#000000" filter="url(#f1xy3brycc10zk)"
+			rx="10" ry="10" style="stroke: none; stroke-width: 1.0;" />
+		<rect fill="#FEFECE" filter="url(#f1xy3brycc10zk)" height="33.9688"
+			rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;"
+			width="220" x="131.25" y="112.8594" />
+		<text fill="#000000" font-family="sans-serif" font-size="12"
+			lengthAdjust="spacingAndGlyphs" textLength="119" x="141.25" y="133.998">Create
+			a new node</text>
+		<text fill="#000000" font-family="sans-serif" font-size="12"
+			font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="77"
+			x="264.25" y="133.998">(newNode)</text>
+		<polygon fill="#FEFECE" filter="url(#f1xy3brycc10zk)"
+			points="203.25,166.8281,279.25,166.8281,291.25,178.8281,279.25,190.8281,203.25,190.8281,191.25,178.8281,203.25,166.8281"
+			style="stroke: #A80036; stroke-width: 1.5;" />
+		<text fill="#000000" font-family="sans-serif" font-size="11"
+			lengthAdjust="spacingAndGlyphs" textLength="76" x="203.25" y="182.6362">Is list
+			empty?</text>
+		<text fill="#000000" font-family="sans-serif" font-size="11"
+			lengthAdjust="spacingAndGlyphs" textLength="20" x="171.25" y="176.2339">yes
+		</text>
+		<text fill="#000000" font-family="sans-serif" font-size="11"
+			lengthAdjust="spacingAndGlyphs" textLength="14" x="291.25" y="176.2339">no
+		</text>
+		<rect fill="#FEFECE" filter="url(#f1xy3brycc10zk)" height="103.8125"
+			rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;"
+			width="209" x="10" y="200.8281" />
+		<text fill="#000000" font-family="sans-serif" font-size="12"
+			lengthAdjust="spacingAndGlyphs" textLength="0" x="24" y="221.9668" />
+		<text fill="#000000" font-family="sans-serif" font-size="12"
+			lengthAdjust="spacingAndGlyphs" textLength="139" x="36" y="235.9355">head.next =
+			newNode</text>
+		<text fill="#000000" font-family="sans-serif" font-size="12"
+			lengthAdjust="spacingAndGlyphs" textLength="173" x="36" y="249.9043">newNode.previouse
+			= head</text>
+		<text fill="#000000" font-family="sans-serif" font-size="12"
+			lengthAdjust="spacingAndGlyphs" textLength="139" x="36" y="263.873">newNode.next
+			= head</text>
+		<text fill="#000000" font-family="sans-serif" font-size="12"
+			lengthAdjust="spacingAndGlyphs" textLength="165" x="36" y="277.8418">head.previous
+			= newNode</text>
+		<text fill="#000000" font-family="sans-serif" font-size="12"
+			lengthAdjust="spacingAndGlyphs" textLength="0" x="24" y="291.8105" />
+		<rect fill="#FEFECE" filter="url(#f1xy3brycc10zk)" height="103.8125"
+			rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;"
+			width="258" x="239" y="200.8281" />
+		<text fill="#000000" font-family="sans-serif" font-size="12"
+			lengthAdjust="spacingAndGlyphs" textLength="0" x="253" y="221.9668" />
+		<text fill="#000000" font-family="sans-serif" font-size="12"
+			lengthAdjust="spacingAndGlyphs" textLength="170" x="265" y="235.9355">newNode.next
+			= head.next</text>
+		<text fill="#000000" font-family="sans-serif" font-size="12"
+			lengthAdjust="spacingAndGlyphs" textLength="222" x="265" y="249.9043">newNode.next.previous
+			= newNode</text>
+		<text fill="#000000" font-family="sans-serif" font-size="12"
+			lengthAdjust="spacingAndGlyphs" textLength="139" x="265" y="263.873">head.next
+			= newNode</text>
+		<text fill="#000000" font-family="sans-serif" font-size="12"
+			lengthAdjust="spacingAndGlyphs" textLength="165" x="265" y="277.8418">newNode.previous
+			= head</text>
+		<text fill="#000000" font-family="sans-serif" font-size="12"
+			lengthAdjust="spacingAndGlyphs" textLength="0" x="253" y="291.8105" />
+		<polygon fill="#FEFECE" filter="url(#f1xy3brycc10zk)"
+			points="241.25,310.6406,253.25,322.6406,241.25,334.6406,229.25,322.6406,241.25,310.6406"
+			style="stroke: #A80036; stroke-width: 1.5;" />
+		<ellipse cx="241.25" cy="364.6406" fill="none" filter="url(#f1xy3brycc10zk)"
+			rx="10" ry="10" style="stroke: #000000; stroke-width: 1.0;" />
+		<ellipse cx="241.75" cy="365.1406" fill="#000000" filter="url(#f1xy3brycc10zk)"
+			rx="6" ry="6" style="stroke: none; stroke-width: 1.0;" />
+		<line style="stroke: #A80036; stroke-width: 1.5;" x1="241.25" x2="241.25"
+			y1="92.8594" y2="112.8594" />
+		<polygon fill="#A80036"
+			points="237.25,102.8594,241.25,112.8594,245.25,102.8594,241.25,106.8594"
+			style="stroke: #A80036; stroke-width: 1.0;" />
+		<line style="stroke: #A80036; stroke-width: 1.5;" x1="191.25" x2="114.5"
+			y1="178.8281" y2="178.8281" />
+		<line style="stroke: #A80036; stroke-width: 1.5;" x1="114.5" x2="114.5"
+			y1="178.8281" y2="200.8281" />
+		<polygon fill="#A80036"
+			points="110.5,190.8281,114.5,200.8281,118.5,190.8281,114.5,194.8281"
+			style="stroke: #A80036; stroke-width: 1.0;" />
+		<line style="stroke: #A80036; stroke-width: 1.5;" x1="291.25" x2="368"
+			y1="178.8281" y2="178.8281" />
+		<line style="stroke: #A80036; stroke-width: 1.5;" x1="368" x2="368"
+			y1="178.8281" y2="200.8281" />
+		<polygon fill="#A80036"
+			points="364,190.8281,368,200.8281,372,190.8281,368,194.8281" style="stroke: #A80036; stroke-width: 1.0;" />
+		<line style="stroke: #A80036; stroke-width: 1.5;" x1="114.5" x2="114.5"
+			y1="304.6406" y2="322.6406" />
+		<line style="stroke: #A80036; stroke-width: 1.5;" x1="114.5" x2="229.25"
+			y1="322.6406" y2="322.6406" />
+		<polygon fill="#A80036"
+			points="219.25,318.6406,229.25,322.6406,219.25,326.6406,223.25,322.6406"
+			style="stroke: #A80036; stroke-width: 1.0;" />
+		<line style="stroke: #A80036; stroke-width: 1.5;" x1="368" x2="368"
+			y1="304.6406" y2="322.6406" />
+		<line style="stroke: #A80036; stroke-width: 1.5;" x1="368" x2="253.25"
+			y1="322.6406" y2="322.6406" />
+		<polygon fill="#A80036"
+			points="263.25,318.6406,253.25,322.6406,263.25,326.6406,259.25,322.6406"
+			style="stroke: #A80036; stroke-width: 1.0;" />
+		<line style="stroke: #A80036; stroke-width: 1.5;" x1="241.25" x2="241.25"
+			y1="146.8281" y2="166.8281" />
+		<polygon fill="#A80036"
+			points="237.25,156.8281,241.25,166.8281,245.25,156.8281,241.25,160.8281"
+			style="stroke: #A80036; stroke-width: 1.0;" />
+		<line style="stroke: #A80036; stroke-width: 1.5;" x1="241.25" x2="241.25"
+			y1="334.6406" y2="354.6406" />
+		<polygon fill="#A80036"
+			points="237.25,344.6406,241.25,354.6406,245.25,344.6406,241.25,348.6406"
+			style="stroke: #A80036; stroke-width: 1.0;" />
+<!--
+@startuml
+title Circular Doubly Linked List \n(Insert at Head)\n
+
+start
+
+:Create a new node **(newNode)**;
+
+if (Is list empty?) then (yes)
+    :
+        head.next = newNode
+        newNode.previouse = head
+        newNode.next = head
+        head.previous = newNode
+    ;
+else (no)
+    :
+        newNode.next = head.next
+        newNode.next.previous = newNode
+        head.next = newNode
+        newNode.previous = head
+    ;
+endif;
+
+stop
+@enduml
+
+PlantUML version 1.2019.00(Sun Jan 13 15:46:42 UTC 2019)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.7.0_25-b15
+Operating System: Linux
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

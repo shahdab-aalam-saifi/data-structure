@@ -5,12 +5,7 @@ import com.saalamsaifi.datastructure.util.BigOh;
 import com.saalamsaifi.datastructure.util.TimeComplexity;
 
 public class BinarySearch implements SearchAlgorithm {
-
-	/**
-	 * 
-	 */
-	private static final int NOT_FOUND = -1;
-	private static final int _2 = 2;
+	private static final int TWO = 2;
 
 	/**
 	 * 
@@ -34,7 +29,7 @@ public class BinarySearch implements SearchAlgorithm {
 		int length = elements.length;
 
 		if (length == 0) {
-			return NOT_FOUND;
+			return -1;
 		}
 
 		int lowerBound = 0;
@@ -45,7 +40,7 @@ public class BinarySearch implements SearchAlgorithm {
 				return -1;
 			}
 
-			int middle = lowerBound + (upperBound - lowerBound) / _2;
+			int middle = lowerBound + (upperBound - lowerBound) / TWO;
 
 			if (SortUtils.isLess(elements[middle].compareTo(key), 0)) {
 				lowerBound = middle + 1;

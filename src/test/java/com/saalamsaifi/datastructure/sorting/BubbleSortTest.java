@@ -1,7 +1,7 @@
 package com.saalamsaifi.datastructure.sorting;
 
-import static com.saalamsaifi.datastructure.sorting.TestProperties.MAX_ELEMENT_COUNT;
-import static com.saalamsaifi.datastructure.sorting.TestProperties.STRING_CHARACTER_COUNT;
+import static com.saalamsaifi.datastructure.util.TestProperties.MAX_ELEMENT_COUNT;
+import static com.saalamsaifi.datastructure.util.TestProperties.STRING_CHARACTER_COUNT;
 import static org.testng.Assert.assertEquals;
 
 import java.util.ArrayList;
@@ -25,12 +25,14 @@ public class BubbleSortTest {
 		bubbleSort = new BubbleSort();
 	}
 
-	@Test(expectedExceptions = { IllegalArgumentException.class }, expectedExceptionsMessageRegExp = "unsortedElements == null")
+	@Test(expectedExceptions = {
+			IllegalArgumentException.class }, expectedExceptionsMessageRegExp = "unsortedElements == null")
 	public void testNullList() throws Exception {
 		bubbleSort.sort((List<Integer>) null, true);
 	}
 
-	@Test(expectedExceptions = { IllegalArgumentException.class }, expectedExceptionsMessageRegExp = "unsortedElements == null")
+	@Test(expectedExceptions = {
+			IllegalArgumentException.class }, expectedExceptionsMessageRegExp = "unsortedElements == null")
 	public void testNullArray() throws Exception {
 		bubbleSort.sort((Integer[]) null, true);
 	}
@@ -55,7 +57,6 @@ public class BubbleSortTest {
 		assertEquals(unsortedElements, sortedElements);
 	}
 
-	
 	@Test
 	public void testSingleListElement() throws Exception {
 		List<Integer> unsortedElements = new ArrayList<>();
@@ -80,7 +81,6 @@ public class BubbleSortTest {
 		assertEquals(unsortedElements, sortedElements);
 	}
 
-	
 	@Test
 	public void testMultipleElements() throws Exception {
 		List<Integer> unsortedElements = new ArrayList<>();
@@ -94,7 +94,7 @@ public class BubbleSortTest {
 
 		assertEquals(unsortedElements, sortedElements);
 	}
-	
+
 	@Test
 	public void testDescendingSort() throws Exception {
 		List<Integer> unsortedElements = new ArrayList<>();

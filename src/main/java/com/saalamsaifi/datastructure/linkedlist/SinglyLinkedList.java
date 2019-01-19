@@ -1,67 +1,54 @@
 package com.saalamsaifi.datastructure.linkedlist;
 
+import com.saalamsaifi.datastructure.linkedlist.Node.NodeConstant;
 import com.saalamsaifi.datastructure.util.BigOh;
 import com.saalamsaifi.datastructure.util.DataStructure;
 import com.saalamsaifi.datastructure.util.DataStructureOperation;
 import com.saalamsaifi.datastructure.util.TimeComplexity;
 
-public class SinglyLinkedList<T> implements DataStructure {
-	private static final String HEAD_NODE = "(HEAD)";
-	private static final String NULL_NODE = "(NULL)";
-
-	private class Node {
-		private Node next;
-		private final T value;
-
-		/**
-		 * 
-		 */
-		public Node(T value) {
-			this.value = value;
-			length++;
-		}
-
-		/**
-		 * @return value
-		 */
-		public T getValue() {
-			return this.value;
-		}
-
-		/*
-		 * (non-Javadoc)
-		 * 
-		 * @see java.lang.Object#toString()
-		 */
-		@Override
-		public String toString() {
-			return "[" + this.getValue() + "]";
-		}
-	}
-
-	private Node head;
-	private int length;
+public class SinglyLinkedList<T> implements DataStructure, LinkedList<T> {
+	private Node<T> head;
+	private int size;
 
 	/**
 	 * 
 	 */
+	@SuppressWarnings("unchecked")
 	public SinglyLinkedList() {
-		head = null;
+		head = new Node<>((T) new Object());
 	}
 
 	public int size() {
-		return this.length;
+		return this.size;
+	}
+
+	/**
+	 * 
+	 */
+	private void incrementSize() {
+		this.size++;
+	}
+
+	/**
+	 * 
+	 */
+	private void decrementSize() {
+		this.size--;
 	}
 
 	/**
 	 * @param value
 	 */
 	public void insertAtHead(T value) {
-		Node newNode = new Node(value);
-		if (this.head != null) {
-			newNode.next = this.head;
+		Node<T> newNode = new Node<>(value);
+
+		if (this.head.getNext() != null) {
+			newNode.setNext(this.head.getNext());
 		}
-		this.head = newNode;
+
+		this.head.setNext(newNode);
+
+		this.incrementSize();
 	}
 
 	/**
@@ -74,7 +61,7 @@ public class SinglyLinkedList<T> implements DataStructure {
 			throw new IllegalArgumentException("position < 0");
 		}
 
-		if (position > this.length) {
+		if (position > this.size) {
 			throw new IllegalArgumentException("position > size");
 		}
 
@@ -83,32 +70,35 @@ public class SinglyLinkedList<T> implements DataStructure {
 			return;
 		}
 
-		Node current = this.head;
+		Node<T> current = this.head.getNext();
 
 		for (int i = 0; i < position - 1; i++) {
-			current = current.next;
+			current = current.getNext();
 		}
 
-		Node newNode = new Node(value);
-		newNode.next = current.next;
-		current.next = newNode;
+		Node<T> newNode = new Node<>(value);
+		this.incrementSize();
+
+		newNode.setNext(current.getNext());
+		current.setNext(newNode);
 	}
 
 	/**
 	 * @param value
 	 */
 	public void insertAtEnd(T value) {
-		insertAtNth(value, this.length);
+		insertAtNth(value, this.size);
 	}
 
 	/**
 	 * @return
 	 */
-	public Node deleteAtHead() {
-		Node temp = this.head;
+	public Node<T> deleteAtHead() {
+		Node<T> temp = this.head.getNext();
 
-		this.head = this.head.next;
-		this.length--;
+		this.head.setNext(temp.getNext());
+
+		this.decrementSize();
 
 		return temp;
 	}
@@ -117,12 +107,12 @@ public class SinglyLinkedList<T> implements DataStructure {
 	 * @param position
 	 * @return
 	 */
-	public Node deleteAtNth(int position) {
+	public Node<T> deleteAtNth(int position) {
 		if (position < 0) {
 			throw new IllegalArgumentException("position < 0");
 		}
 
-		if (position > this.length) {
+		if (position > this.size) {
 			throw new IllegalArgumentException("position > size");
 		}
 
@@ -130,16 +120,17 @@ public class SinglyLinkedList<T> implements DataStructure {
 			return deleteAtHead();
 		}
 
-		Node first = this.head;
+		Node<T> first = this.head.getNext();
 
 		for (int i = 0; i < position - 1; i++) {
-			first = first.next;
+			first = first.getNext();
 		}
 
-		Node temp = first.next;
+		Node<T> temp = first.getNext();
 
-		first.next = first.next.next;
-		this.length--;
+		first.setNext((first.getNext()).getNext());
+
+		this.decrementSize();
 
 		return temp;
 	}
@@ -147,8 +138,8 @@ public class SinglyLinkedList<T> implements DataStructure {
 	/**
 	 * @return
 	 */
-	public Node deleteAtEnd() {
-		return deleteAtNth(this.length - 1);
+	public Node<T> deleteAtEnd() {
+		return deleteAtNth(this.size - 1);
 	}
 
 	/**
@@ -158,19 +149,19 @@ public class SinglyLinkedList<T> implements DataStructure {
 	public int search(T value) {
 		int index = 0;
 
-		Node current = this.head;
+		Node<T> current = this.head.getNext();
 
-		if (this.head != null) {
+		if (this.head.getNext() != null) {
 			if (current.getValue() == value) {
 				return index;
 			}
 
-			while (current.next != null) {
+			while (current.getNext() != null) {
 				if (current.getValue() == value) {
 					return index;
 				}
 				index++;
-				current = current.next;
+				current = current.getNext();
 			}
 		}
 
@@ -181,7 +172,7 @@ public class SinglyLinkedList<T> implements DataStructure {
 	 * @return
 	 */
 	public boolean isEmpty() {
-		return this.length == 0;
+		return this.size == 0;
 	}
 
 	/*
@@ -193,16 +184,16 @@ public class SinglyLinkedList<T> implements DataStructure {
 	public String toString() {
 		StringBuilder list = new StringBuilder();
 
-		Node current = this.head;
+		Node<T> current = this.head.getNext();
 
-		list.append(HEAD_NODE);
+		list.append(NodeConstant.HEAD_NODE.getValue());
 
 		while (current != null) {
 			list.append(current);
-			current = current.next;
+			current = current.getNext();
 		}
 
-		list.append(NULL_NODE);
+		list.append(NodeConstant.NULL_NODE.getValue());
 
 		return list.toString();
 	}

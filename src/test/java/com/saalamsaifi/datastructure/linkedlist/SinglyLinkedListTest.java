@@ -1,6 +1,6 @@
 package com.saalamsaifi.datastructure.linkedlist;
 
-import static com.saalamsaifi.datastructure.sorting.TestProperties.MAX_ELEMENT_COUNT;
+import static com.saalamsaifi.datastructure.util.TestProperties.MAX_ELEMENT_COUNT;
 import static org.testng.Assert.assertEquals;
 
 import java.io.ByteArrayOutputStream;
@@ -212,7 +212,7 @@ public class SinglyLinkedListTest {
 		assertEquals(linkedList.getTimeComplexity(TimeComplexity.WORST, DataStructureOperation.INSERTION),
 				BigOh.O_1.getComplexity());
 	}
-	
+
 	@Test
 	public void testDeletionWorstTimeComplexity() throws Exception {
 		assertEquals(linkedList.getTimeComplexity(TimeComplexity.WORST, DataStructureOperation.DELETION),
@@ -227,14 +227,12 @@ public class SinglyLinkedListTest {
 
 	@Test
 	public void testInvalidOperationTimeComplexity() throws Exception {
-		assertEquals(linkedList.getTimeComplexity(TimeComplexity.WORST, null),
-				BigOh.O_INVALID.getComplexity());
+		assertEquals(linkedList.getTimeComplexity(TimeComplexity.WORST, null), BigOh.O_INVALID.getComplexity());
 	}
 
 	@Test
 	public void testSpaceComplexity() throws Exception {
 		assertEquals(linkedList.getSpaceComplexity(), BigOh.O_N.getComplexity());
 	}
-
 
 }

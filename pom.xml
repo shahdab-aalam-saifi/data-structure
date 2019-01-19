@@ -5,7 +5,7 @@
 
 	<groupId>com.saalamsaifi</groupId>
 	<artifactId>data-structure</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 	<packaging>jar</packaging>
 
 	<name>data-structure</name>
@@ -26,6 +26,7 @@
 		<commons.lang.version>2.6</commons.lang.version>
 		<slf4j.version>1.7.25</slf4j.version>
 		<surefire.testng.version>2.13</surefire.testng.version>
+		<sonar.host.url> http://localhost:9000/ </sonar.host.url>
 	</properties>
 
 	<dependencies>
@@ -89,11 +90,6 @@
 						<configuration>
 							<dataFile>target/jacoco.exec</dataFile>
 							<outputDirectory>target/jacoco-ut</outputDirectory>
-							<excludes>
-								<exclude>com/saalamsaifi/datastructure/*</exclude>
-								<exclude>com/saalamsaifi/datastructure/basic/*</exclude>
-								<exclude>com/saalamsaifi/datastructure/util/*</exclude>
-							</excludes>
 						</configuration>
 					</execution>
 				</executions>

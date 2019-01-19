@@ -4,14 +4,14 @@ import com.saalamsaifi.datastructure.util.BigOh;
 import com.saalamsaifi.datastructure.util.TimeComplexity;
 
 public class RadixSort {
-	private static final int _2 = 2;
-	private static final int _10 = 10;
+	private static final int TWO = 2;
+	private static final int TEN = 10;
 
 	public RadixSort() {
 		super();
 	}
 
-	public int[] sort(int[] unsortedElements, boolean isAscending) {
+	private static int[] sortAscending(int[] unsortedElements) {
 		if (unsortedElements == null) {
 			throw new IllegalArgumentException("unsortedElements == null");
 		}
@@ -28,19 +28,31 @@ public class RadixSort {
 
 		int max = getMaximum(unsortedElements);
 
-		for (int exponent = 1; max / exponent > 0; exponent *= _10) {
+		for (int exponent = 1; max / exponent > 0; exponent *= TEN) {
 			countSort(unsortedElements, exponent);
 		}
 
-		if (isAscending) {
-			for (int i = 0; i < length / _2; i++) {
-				int temp = unsortedElements[i];
-				unsortedElements[i] = unsortedElements[length - i - 1];
-				unsortedElements[length - i - 1] = temp;
-			}
+		return unsortedElements;
+	}
+
+	private static void reverse(int[] unsortedElements) {
+		int length = unsortedElements.length;
+		for (int i = 0; i < length / TWO; i++) {
+			int temp = unsortedElements[i];
+			unsortedElements[i] = unsortedElements[length - i - 1];
+			unsortedElements[length - i - 1] = temp;
 		}
 
-		return unsortedElements;
+	}
+
+	public int[] sort(int[] unsortedElements, boolean isAscending) {
+		if (isAscending) {
+			return sortAscending(unsortedElements);
+		} else {
+			sortAscending(unsortedElements);
+			reverse(unsortedElements);
+			return unsortedElements;
+		}
 	}
 
 	/***
@@ -94,21 +106,21 @@ public class RadixSort {
 	private static int[] countSort(int[] elements, int exponent) {
 		int length = elements.length;
 
-		int[] count = new int[_10];
+		int[] count = new int[TEN];
 
 		for (int i = 0; i < length; i++) {
-			count[(elements[i] / exponent) % _10]++;
+			count[(elements[i] / exponent) % TEN]++;
 		}
 
-		for (int i = 1; i < _10; i++) {
+		for (int i = 1; i < TEN; i++) {
 			count[i] += count[i - 1];
 		}
 
 		int[] output = new int[length];
 
 		for (int i = length - 1; i >= 0; i--) {
-			output[count[(elements[i] / exponent) % _10] - 1] = elements[i];
-			count[(elements[i] / exponent) % _10]--;
+			output[count[(elements[i] / exponent) % TEN] - 1] = elements[i];
+			count[(elements[i] / exponent) % TEN]--;
 		}
 
 		for (int i = 0; i < length; i++) {
