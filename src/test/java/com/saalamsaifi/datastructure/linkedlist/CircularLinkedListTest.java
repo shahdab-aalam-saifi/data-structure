@@ -24,7 +24,6 @@ public class CircularLinkedListTest {
 
 	@AfterMethod
 	public void tearDownMethod() throws Exception {
-		System.out.println("tearDownMethod");
 		outputStream.reset();
 		System.setOut(printStream);
 	}

@@ -8,6 +8,7 @@
 			<package name="com.saalamsaifi.datastructure.sorting" />
 			<package name="com.saalamsaifi.datastructure.searching" />
 			<package name="com.saalamsaifi.datastructure.linkedlist" />
+			<package name="com.saalamsaifi.datastructure.stack" />
 		</packages>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
