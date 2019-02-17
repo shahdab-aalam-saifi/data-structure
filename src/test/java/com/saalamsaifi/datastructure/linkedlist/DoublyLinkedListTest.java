@@ -181,7 +181,7 @@ public class DoublyLinkedListTest {
 		linkedList.insertAtEnd(5);
 		linkedList.printBackward();
 
-		assertEquals(outputStream.toString(), "(NULL)[5][4][3][2][1](HEAD)");
+		assertEquals(linkedList.printBackward(), "(NULL)[5][4][3][2][1](HEAD)");
 	}
 
 	@Test

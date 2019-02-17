@@ -9,6 +9,7 @@
 			<package name="com.saalamsaifi.datastructure.searching" />
 			<package name="com.saalamsaifi.datastructure.linkedlist" />
 			<package name="com.saalamsaifi.datastructure.stack" />
+			<package name="com.saalamsaifi.datastructure.queue" />
 		</packages>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

@@ -1,20 +1,20 @@
-package com.saalamsaifi.datastructure.stack;
+package com.saalamsaifi.datastructure.queue;
 
 import com.saalamsaifi.datastructure.util.BigOh;
 import com.saalamsaifi.datastructure.util.DataStructure;
 import com.saalamsaifi.datastructure.util.DataStructureOperation;
 import com.saalamsaifi.datastructure.util.TimeComplexity;
 
-public interface Stack<T> extends DataStructure{
+public interface Queue<T> extends DataStructure {
 	/**
 	 * @param data
 	 */
-	void push(T data);
+	void enqueue(T data);
 
 	/**
 	 * @return
 	 */
-	T pop();
+	T dequeue();
 
 	/**
 	 * @return
@@ -30,7 +30,6 @@ public interface Stack<T> extends DataStructure{
 	 * @return
 	 */
 	boolean isEmpty();
-
 
 	/*
 	 * (non-Javadoc)

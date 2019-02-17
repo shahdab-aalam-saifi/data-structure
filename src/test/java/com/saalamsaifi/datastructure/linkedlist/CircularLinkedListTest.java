@@ -191,14 +191,12 @@ public class CircularLinkedListTest {
 		linkedList.insertAtEnd(3);
 		linkedList.insertAtEnd(4);
 		linkedList.insertAtEnd(5);
-		linkedList.printBackward();
 
-		assertEquals(outputStream.toString(), "(NULL)[5][4][3][2][1](HEAD)");
+		assertEquals(linkedList.printBackward(), "(NULL)[5][4][3][2][1](HEAD)");
 	}
 
 	@Test
 	public void testPrintBackwordEmptyList() throws Exception {
-		linkedList.printBackward();
-		assertEquals(outputStream.toString(), "(NULL)(HEAD)");
+		assertEquals(linkedList.printBackward(), "(NULL)(HEAD)");
 	}
 }

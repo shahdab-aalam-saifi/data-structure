@@ -1,14 +1,14 @@
-package com.saalamsaifi.datastructure.stack;
+package com.saalamsaifi.datastructure.queue;
 
-public enum StackConstant {
-	TOP("[TOP]"), BOTTOM("[BOTTOM]");
+public enum QueueConstant {
+	FRONT("[FRONT]"), REAR("[REAR]");
 
 	private String value;
 
 	/**
 	 * @param value
 	 */
-	private StackConstant(String value) {
+	private QueueConstant(String value) {
 		this.value = value;
 	}
 

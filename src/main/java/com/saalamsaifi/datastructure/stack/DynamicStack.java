@@ -2,10 +2,7 @@ package com.saalamsaifi.datastructure.stack;
 
 import java.util.ArrayList;
 
-import com.saalamsaifi.datastructure.util.BigOh;
 import com.saalamsaifi.datastructure.util.DataStructure;
-import com.saalamsaifi.datastructure.util.DataStructureOperation;
-import com.saalamsaifi.datastructure.util.TimeComplexity;
 
 public class DynamicStack<T> implements Stack<T>, DataStructure {
 	private ArrayList<T> stack;
@@ -74,61 +71,25 @@ public class DynamicStack<T> implements Stack<T>, DataStructure {
 	 */
 	@Override
 	public boolean isEmpty() {
-		if (this.top >= 0) {
-			return false;
-		}
-		return true;
+		return this.top < 0;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {
-		StringBuilder stack = new StringBuilder();
+		StringBuilder builder = new StringBuilder();
 
-		stack.append(StackConstant.TOP.getValue());
+		builder.append(StackConstant.TOP.getValue());
 		for (int i = this.top; i >= 0; i--) {
-			stack.append("[" + this.stack.get(i) + "]");
+			builder.append("[" + this.stack.get(i) + "]");
 		}
-		stack.append(StackConstant.BOTTOM.getValue());
+		builder.append(StackConstant.BOTTOM.getValue());
 
-		return stack.toString();
-	}
-	
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.saalamsaifi.datastructure.util.DataStructure#getTimeComplexity(com.
-	 * saalamsaifi.datastructure.util.TimeComplexity,
-	 * com.saalamsaifi.datastructure.util.DataStructureOperation)
-	 */
-	@Override
-	public String getTimeComplexity(TimeComplexity type, DataStructureOperation operation) {
-		String complexity = null;
-
-		if (type == TimeComplexity.AVERAGE || type == TimeComplexity.WORST) {
-			if (operation == DataStructureOperation.ACCESS || operation == DataStructureOperation.SEARCH) {
-				complexity = BigOh.O_N.getComplexity();
-			} else if (operation == DataStructureOperation.INSERTION || operation == DataStructureOperation.DELETION) {
-				complexity = BigOh.O_1.getComplexity();
-			} else {
-				complexity = BigOh.O_INVALID.getComplexity();
-			}
-		} else {
-			complexity = BigOh.O_INVALID.getComplexity();
-		}
-
-		return complexity;
+		return builder.toString();
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.saalamsaifi.datastructure.util.DataStructure#getSpaceComplexity()
-	 */
-	@Override
-	public String getSpaceComplexity() {
-		return BigOh.O_N.getComplexity();
-	}
 }

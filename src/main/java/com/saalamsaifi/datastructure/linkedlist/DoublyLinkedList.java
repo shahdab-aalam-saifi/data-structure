@@ -1,12 +1,8 @@
 package com.saalamsaifi.datastructure.linkedlist;
 
 import com.saalamsaifi.datastructure.linkedlist.Node.NodeConstant;
-import com.saalamsaifi.datastructure.util.BigOh;
-import com.saalamsaifi.datastructure.util.DataStructure;
-import com.saalamsaifi.datastructure.util.DataStructureOperation;
-import com.saalamsaifi.datastructure.util.TimeComplexity;
 
-public class DoublyLinkedList<T> implements DataStructure, LinkedList<T> {
+public class DoublyLinkedList<T> implements LinkedList<T> {
 	private static class DoublyNode<T> extends Node<T> {
 		private DoublyNode<T> previous;
 
@@ -218,8 +214,8 @@ public class DoublyLinkedList<T> implements DataStructure, LinkedList<T> {
 		return this.size;
 	}
 
-	public void printBackward() {
-		StringBuilder list = new StringBuilder();
+	public String printBackward() {
+		StringBuilder builder = new StringBuilder();
 
 		DoublyNode<T> current = this.head.getNext();
 
@@ -227,14 +223,14 @@ public class DoublyLinkedList<T> implements DataStructure, LinkedList<T> {
 			current = current.getNext();
 		}
 
-		list.append(NodeConstant.NULL_NODE.getValue());
+		builder.append(NodeConstant.NULL_NODE.getValue());
 		for (int i = 0; i < this.size(); i++) {
-			list.append(current);
+			builder.append(current);
 			current = current.getPrevious();
 		}
-		list.append(NodeConstant.HEAD_NODE.getValue());
+		builder.append(NodeConstant.HEAD_NODE.getValue());
 
-		System.out.print(list);
+		return builder.toString();
 	}
 
 	/*
@@ -274,39 +270,4 @@ public class DoublyLinkedList<T> implements DataStructure, LinkedList<T> {
 		this.size--;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.saalamsaifi.datastructure.util.DataStructure#getTimeComplexity(com.
-	 * saalamsaifi.datastructure.util.TimeComplexity,
-	 * com.saalamsaifi.datastructure.util.DataStructureOperation)
-	 */
-	@Override
-	public String getTimeComplexity(TimeComplexity type, DataStructureOperation operation) {
-		String complexity = null;
-
-		if (type == TimeComplexity.AVERAGE || type == TimeComplexity.WORST) {
-			if (operation == DataStructureOperation.ACCESS || operation == DataStructureOperation.SEARCH) {
-				complexity = BigOh.O_N.getComplexity();
-			} else if (operation == DataStructureOperation.INSERTION || operation == DataStructureOperation.DELETION) {
-				complexity = BigOh.O_1.getComplexity();
-			} else {
-				complexity = BigOh.O_INVALID.getComplexity();
-			}
-		} else {
-			complexity = BigOh.O_INVALID.getComplexity();
-		}
-
-		return complexity;
-	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.saalamsaifi.datastructure.util.DataStructure#getSpaceComplexity()
-	 */
-	@Override
-	public String getSpaceComplexity() {
-		return BigOh.O_N.getComplexity();
-	}
 }

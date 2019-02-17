@@ -333,20 +333,20 @@ public class CircularLinkedList<T> implements LinkedList<T> {
 	/**
 	 * 
 	 */
-	public void printBackward() {
-		StringBuilder list = new StringBuilder();
+	public String printBackward() {
+		StringBuilder builder = new StringBuilder();
 
 		CircularNode<T> current = this.head.previous;
 
-		list.append(NodeConstant.NULL_NODE.getValue());
+		builder.append(NodeConstant.NULL_NODE.getValue());
 
 		while (current != null && current != this.head) {
-			list.append(current);
+			builder.append(current);
 			current = current.previous;
 		}
 
-		list.append(NodeConstant.HEAD_NODE.getValue());
+		builder.append(NodeConstant.HEAD_NODE.getValue());
 
-		System.out.print(list.toString());
+		return builder.toString();
 	}
 }
