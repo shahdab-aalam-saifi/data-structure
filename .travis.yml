@@ -1,13 +1,17 @@
 language: java
-
-jdk: oraclejdk8
-
+jdk: 
+  - oraclejdk8
 sudo: false
-
 dist: trusty
-
 cache:
   directories:
-    - $HOME/.m2
+    - $HOME/.m2/
+    - $HOME/.sonar/
 
-script: mvn clean install jacoco:report
+addons:
+  sonarcloud:
+    organization: "shahdab-aalam-saifi-github"
+
+script:
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package
+  - mvn sonar:sonar

@@ -25,7 +25,6 @@
 		<jacoco.version>0.8.2</jacoco.version>
 		<commons.lang.version>2.6</commons.lang.version>
 		<surefire.testng.version>2.13</surefire.testng.version>
-		<sonar.host.url> http://localhost:9000/ </sonar.host.url>
 	</properties>
 
 	<dependencies>
@@ -47,6 +46,19 @@
 
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>org.sonarsource.scanner.maven</groupId>
+				<artifactId>sonar-maven-plugin</artifactId>
+				<version>3.6.0.1398</version>
+				<executions>
+					<execution>
+						<phase>verify</phase>
+						<goals>
+							<goal>sonar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 			<!-- https://mvnrepository.com/artifact/org.jacoco/jacoco-maven-plugin -->
 			<plugin>
 				<groupId>org.jacoco</groupId>
